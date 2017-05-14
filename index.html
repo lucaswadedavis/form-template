@@ -26,7 +26,12 @@ function LivingForm() {
     return $('<div/>').append(title, firstName, lastName, output);
 
     function displayInput () {
-        output.text('Your name is ' + firstName.val() + ' ' + lastName.val());
+        //output.text('Your name is ' + firstName.val() + ' ' + lastName.val());
+        var template = `
+          <h2>${firstName.val()}</h2>
+          <p>This is a paragraph.</p>
+        `;
+        output.html(template);
     };
 };
 
@@ -37,8 +42,6 @@ function init () {
 
 </head>
 
-<body onLoad="init()">
-
-</body>
+<body onLoad="init()"></body>
 </html>
 
